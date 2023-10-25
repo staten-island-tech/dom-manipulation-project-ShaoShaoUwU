@@ -4,12 +4,12 @@ const DOMSelectors = {
     h2s: document.querySelectorAll("h2"),
 };
 
-DOMSelectors.form.addEventListener("submit", function (event){
+/* DOMSelectors.form.addEventListener("submit", function (event){
     event.preventDefault();
     DOMSelectors.h2s.forEach(
         (header) => (header.textContent = DOMSelectors.ChampName.value)
     );
-});
+}); */
 
 function card(Champ) {
     document.querySelector("#gallery").insertAdjacentHTML(
