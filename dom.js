@@ -1,26 +1,24 @@
-const DOMSelectors = {
-    form: document.querySelector("#form"),
-    ChampName: document.querySelector(".Champ-Name"),
-    h2s: document.querySelectorAll("h2"),
-};
 
-/* DOMSelectors.form.addEventListener("submit", function (event){
-    event.preventDefault();
-    DOMSelectors.h2s.forEach(
-        (header) => (header.textContent = DOMSelectors.ChampName.value)
-    );
-}); */
+    const DOMSelectors = {
+        form: document.querySelector("#form"),
+        ChampName: document.querySelector(".Champ-Name"),
+        ChampImage: document.querySelector("#ChampImage"),
+        ChampTitle: document.querySelector("#ChampTitle"),
+        gallery: document.querySelector("#gallery")
+    };
 
-function card(Champ) {
-    document.querySelector("#gallery").insertAdjacentHTML(
-        "beforeend",
-        `<div class="card">
-            <h2 class="card-title">${Champ.ChampName.value}</h2>
-        </div>`
-    );
-}
+    function card(Champ) {
+        DOMSelectors.gallery.insertAdjacentHTML(
+            "beforeend",
+            <div class="card">
+                <h2 class="card-title">${Champ.ChampName.value}</h2>
+                <img src="${Champ.ChampImage.value}" alt="Champion Image" />
+                <h3>${Champ.ChampTitle.value}</h3>
+            </div>
+        );
+    };
 
-DOMSelectors.form.addEventListener("submit", function(event) {
-    event.preventDefault();
-    card(DOMSelectors);
-});
+    DOMSelectors.form.addEventListener("submit", function(event) {
+        event.preventDefault();
+        card(DOMSelectors);
+    });
