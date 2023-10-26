@@ -10,11 +10,11 @@
     function card(Champ) {
         DOMSelectors.gallery.insertAdjacentHTML(
             "beforeend",
-            <div class="card">
+            `<div id="gallery">
                 <h2 class="card-title">${Champ.ChampName.value}</h2>
                 <img src="${Champ.ChampImage.value}" alt="Champion Image" />
                 <h3>${Champ.ChampTitle.value}</h3>
-            </div>
+            </div>`
         );
     };
 
