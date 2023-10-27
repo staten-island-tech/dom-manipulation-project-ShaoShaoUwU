@@ -14,11 +14,26 @@
                 <h2 class="card-title">${Champ.ChampName.value}</h2>
                 <img src="${Champ.ChampImage.value}" alt="Champion Image" />
                 <h3>${Champ.ChampTitle.value}</h3>
+                <button>dies</button>
             </div>`
         );
     };
+    function clearFields() {
+        DOMSelectors.ChampImage.value = ""
+        DOMSelectors.ChampTitle.value = ""
+        DOMSelectors.ChampName.value = ""
+    };
 
+    function remove(){
+        let buttons = document.querySelectorAll("button")
+        buttons.forEach((btn)=>
+        btn.addEventListener("click", function(event){
+            console.log(event.target.parentElement);
+        })
+        );
+    }
     DOMSelectors.form.addEventListener("submit", function(event) {
         event.preventDefault();
         card(DOMSelectors);
+        clearFields();
     });
