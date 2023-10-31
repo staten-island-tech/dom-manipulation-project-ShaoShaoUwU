@@ -28,7 +28,7 @@
         let buttons = document.querySelectorAll("button")
         buttons.forEach((btn)=>
         btn.addEventListener("click", function(event){
-            console.log(event.target.parentElement);
+            btn.parentElement.remove();
         })
         );
     }
@@ -36,4 +36,5 @@
         event.preventDefault();
         card(DOMSelectors);
         clearFields();
+        remove();
     });
